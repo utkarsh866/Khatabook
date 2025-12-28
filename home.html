@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+    <link rel="stylesheet" href="home.css">
+<script>
+if (localStorage.getItem("loggedIn") !== "true") {
+  window.location.href = "login.html";
+}
+</script>
+<div class="header">
+    <div class="top1">
+        <img src="Khatabook.png" alt="khatbook">
+        <h1 class="top">KHATABOOK</h1>
+      </div>
+        <button class="logout" onclick="localStorage.removeItem('loggedIn'); window.location.href='login.html';">
+            Logout
+        </button>
+</div>
+
+    <section class="quick-actions">
+        <div class="action-btn">➕<br>Add Customer</div>
+        <div class="action-btn">➖<br>Add Supplier</div>
+        <div class="action-btn">📤<br>Reminder</div>
+        <div class="action-btn">📸<br>Upload Bill</div>
+        <div class="action-btn">🧾<br>Invoice</div>
+        <div class="action-btn">💰<br>Cash Entry</div>
+    </section>
+
+    <section class="ledger-section">
+        <h3>Your Ledgers</h3>
+        <div class="ledger-card">
+            <h4>Utkarsh Traders</h4>
+            <p>Balance: <span class="green">₹1,450 Receive</span></p>
+            <p>Last Entry: 20 Dec</p>
+        </div>
+
+        <div class="ledger-card">
+            <h4>Singh Suppliers</h4>
+            <p>Balance: <span class="red">₹780 Give</span></p>
+            <p>Last Entry: 19 Dec</p>
+        </div>
+    </section>
+
+    <section class="bottom-nav">
+        <div class="nav-item active">🏠<br>Home</div>
+        <div class="nav-item">📘<br>Ledger</div>
+        <div class="nav-item">📦<br>Inventory</div>
+        <div class="nav-item">📊<br>Reports</div>
+        <div class="nav-item">☰<br>More</div>
+    </section>
+</body>
+</html>

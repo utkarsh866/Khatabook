@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Khatabook – Registration</title>
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" role="form" >
+      <header class="header">
+        <div class="logo" >
+              <img src="Khatabook.png" alt="khatbook">
+        </div>
+        <h1 class="brand" id="kb-title">Khatabook</h1>
+      </header>
+
+      <div class="content">
+        <h2 class="section-title">Registration</h2>
+        <p id="kb-desc" class="helper">Create your account to continue</p>
+
+        <form onsubmit="event.preventDefault(); registerUser();">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="firstName" type="text" placeholder="Enter first name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" type="text" placeholder="Enter last name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email ID</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter password" required />
+          </div>
+
+          <button type="submit" class="btn">Create Account</button>
+           <p class="helper small">
+             Already have an account?
+             <a href="login.html" class="link">Login</a>
+           </p>
+
+        </form>
+      </div>
+
+      <footer class="footer">
+        © Khatabook (Demo) 
+      </footer>
+    </section>
+    
+<script>
+function registerUser() {
+  let firstname = document.getElementById("firstName").value;
+  let lastname = document.getElementById("lastName").value;
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("password").value;
+
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("userPass", pass);
+
+  alert("Registration successful!");
+  window.location.href = "login.html";
+}
+</script>
+
+  </main>
+
+  
